@@ -15,7 +15,7 @@ class PassTurnButton(GameObject):
         self.turnRectangleY = [0, 450]
 
     def onClick(self, game):
-        game.selectedCard = NULL
+        game.states[game.currentState]['selectedCard'] = NULL
         for player in game.states[game.currentState]['players']:
             for card in player.field:
                 card.attackUsed = 0

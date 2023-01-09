@@ -16,6 +16,7 @@ class Game:
             'play': {'gameObjects': []},
         }
         self.currentState = 'play'
+        self.state = self.states[self.currentState]
 
         self.states[self.currentState]['bigFont'] = pygame.font.SysFont("freesansbold", 60)
         self.states[self.currentState]['smallFont'] = pygame.font.SysFont("freesansbold", 30)
@@ -25,9 +26,9 @@ class Game:
         start(self)
         while True:
             self.screen.fill(Colors.GREY)
+            update(self)
             for gameObject in self.states[self.currentState]['gameObjects']:
                 gameObject.update()
-            update(self)
             draw(self)
             pygame.display.update()
             fpsClock.tick(FPS)

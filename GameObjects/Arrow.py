@@ -40,11 +40,11 @@ class Arrow(GameObject):
                 self.originObject.dealDamage(self.targetObject)
                 self.used = 1
                 self.transformhandler.speed = 0
-                self.game.arrowFlies = 0
+                self.game.state['arrowFlies'] = 0
                 # self.delete()
 
     def delete(self):
         # self.game.arrowFlies = 0
-        self.game.gameObjects.remove(self)
-        self.game.gameObjects.remove(self.transformhandler)
-        self.game.gameObjects.remove(self.imageHandler)
+        self.game.state['gameObjects'].remove(self)
+        self.game.state['gameObjects'].remove(self.transformhandler)
+        self.game.state['gameObjects'].remove(self.imageHandler)

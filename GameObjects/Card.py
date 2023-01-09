@@ -83,10 +83,10 @@ class Card(GameObject):
             self.statsText[statsText].delete()
         
         self.emptyZone.isFull = 0
-        self.game.states[self.game.currentState].gameObjects.remove(self.clicker)
-        self.game.states[self.game.currentState].gameObjects.remove(self.imageHandler)
+        self.game.states[self.game.currentState]['gameObjects'].remove(self.clicker)
+        self.game.states[self.game.currentState]['gameObjects'].remove(self.imageHandler)
         self.game.states[self.game.currentState]['players'][self.playerNum].field.remove(self)
-        self.game.states[self.game.currentState].gameObjects.remove(self)
+        self.game.states[self.game.currentState]['gameObjects'].remove(self)
 
     def update(self):
         self.rect.x = self.position.x
